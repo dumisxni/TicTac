@@ -1,21 +1,35 @@
+import java.sql.Array;
+import java.util.*;
 public class tictac {
-    public static String topLayer(int position){
-        return "| 1 2 3 |";
-    }
-    public static String middleLayer(int position){
-            return "| 4 5 6 |";
-    }
+    public int winner(String board){
 
-    public static String bottomLayer(int position){
-        return "| 7 8 9 |";
+        int[] winnerNumbers = {16,20,24,30,34,38,44,48,52};
+        for (int i = 0; i < 8; i++) {
+
+        }
+        return 0;
     }
-
-
     public static void main(String[] args) {
-        System.out.println("---------\n" + ""+topLayer(1)+"\n"+middleLayer(3)+"\n"+bottomLayer(3)+"\n"+"---------");
+            Scanner keyboard = new Scanner(System.in);
+            Random comp = new Random();
 
-        System.out.println(middleLayer(2).length());
-        System.out.println(middleLayer(2).replace('4','X'));
+            String player1 =  (comp.nextInt(9)+1)+"";
+            System.out.println("choose position in the board");
+            //String player2 = keyboard.nextLine();
 
+            String board = """
+                    _____________
+                    | 1 | 2 | 3 |
+                    | 4 | 5 | 6 |
+                    | 7 | 8 | 9 |
+                    _____________""";
+
+        int[] winnerNumbers = {16,20,24,30,34,38,44,48,52};
+        for(int i:winnerNumbers){
+            System.out.println(i);
+        }
+            //System.out.println("---------");
+            System.out.print(board.replace(player1.charAt(0),'X'));
+            //System.out.println("---------");
     }
 }
