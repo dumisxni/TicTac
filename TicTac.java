@@ -72,9 +72,6 @@ public class TicTac {
 
         int i = 0;
 
-        for(String g: compMoves){
-            System.out.println(g);
-        }
         while (game.winner() == 0 && i<=8 && occupiedPositions.size() <=8){
             game.updateBoard(board.replace(compMoves.get(i).charAt(0),'X'));
             System.out.println(board);
@@ -90,7 +87,7 @@ public class TicTac {
             }
             boolean validMove = true;
             while(validMove){
-                System.out.println("choose position on the board");
+                System.out.println("Your turn, choose position on the board");
                 String playerMove = keyboard.nextLine();
                 if (!occupiedPositions.contains(playerMove)) {
                     game.updateBoard(board.replace(playerMove.charAt(0),'O'));
@@ -111,6 +108,7 @@ public class TicTac {
                 System.out.print("player 2 wins");
                 break;
             }
+            System.out.println("Computer's turn");
         }
         if(game.winner() == 0){
             System.out.print("Nobody won");
