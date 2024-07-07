@@ -3,26 +3,26 @@ TicTac Java Game
 This project implements a simple Tic-Tac-Toe game in Java, where a player competes against the computer. The game uses a textual representation of the board and allows the player to make moves by entering positions.
 
 Features
-  Player vs Computer gameplay.
-  Randomized computer moves.
-  Checks for winning conditions.
-  Text-based interface.
+ . Player vs Computer gameplay.
+ . Randomized computer moves.
+ . Checks for winning conditions.
+ . Text-based interface.
   
 Getting Started
 To run the game on your local machine, follow these steps:
 
 1. Clone the repository:
-  git clone https://github.com/your-username/your-repository.git
+  .  git clone https://github.com/your-username/your-repository.git
 
-  cd tictac-java
+  .  cd your-repository
 
-  git pull https://github.com/dumisxni/dumisxni
+  .  git pull https://github.com/dumisxni/dumisxni
 
  
 
 3. Compile and run the program:
-  javac TicTac.java
-  java TicTac
+  . javac TicTac.java
+  . java TicTac
 
 4. Follow the on-screen instructions to play the game.
 
