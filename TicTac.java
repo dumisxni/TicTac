@@ -9,7 +9,7 @@ public class TicTac {
     public int startingNumber;
 
     private boolean winningRows(int start,int step){
-        this.startingNumber = start;
+        //this.startingNumber = start;
         return (board.charAt(start) ==  board.charAt(start + step) && board.charAt(start) == board.charAt(start + step*2) );
     }
 
@@ -23,35 +23,26 @@ public class TicTac {
 
     public int winner(){
         this.startingNumber = 16;
-        for (int j = 0; j < 8; j++) {
-            if (j<=2) {
-                if (winningRows(startingNumber,4) ){
-                    return board.charAt(startingNumber) == 'X' ? 1 : 2;
-                }  else updateStartingNumber(14);
+        for (int i = 0; i < 3; i++) {
+            if (winningRows(startingNumber, 4)) {
+                return board.charAt(startingNumber) == 'X' ? 1 : 2;
             }
-
-            else if (j >= 3 && j<6){
-                this.startingNumber = 16;
-                if (winningRows(startingNumber,14)){
-                    return board.charAt(startingNumber) == 'X' ? 1 : 2;
-                }
-                else updateStartingNumber(4);
+            updateStartingNumber(14);
+        }
+        this.startingNumber = 16;
+        for (int i = 0; i < 3; i++) {
+            if (winningRows(startingNumber, 14)) {
+                return board.charAt(startingNumber) == 'X' ? 1 : 2;
             }
+            updateStartingNumber(4);
+        }
+        //this.startingNumber = 16;
+        if (winningRows(16, 18)) {
+            return board.charAt(16) == 'X' ? 1 : 2;
+        }
 
-            else if(j == 6){
-                this.startingNumber = 16;
-                if (winningRows(startingNumber,18)) {
-                    return board.charAt(startingNumber) == 'X' ? 1 : 2;
-                }
-                else updateStartingNumber(8);
-            }
-
-            else if (j == 7) {
-                if (winningRows(startingNumber,10)) {
-                    return board.charAt(startingNumber) == 'X' ? 1 : 2;
-                }
-            }
-
+        if (winningRows(24, 10)) {
+            return board.charAt(24) == 'X' ? 1 : 2;
         }
         return 0;
     }
@@ -72,24 +63,24 @@ public class TicTac {
 
         int i = 0;
 
-        while (game.winner() == 0 && i<=8 && occupiedPositions.size() <=8){
+        while (game.winner() == 0 && i<9 && occupiedPositions.size() <7){
             game.updateBoard(board.replace(compMoves.get(i).charAt(0),'X'));
             System.out.println(board);
             occupiedPositions.add(compMoves.get(i));
 
             if(game.winner() == 1){
-                System.out.print("player 1 wins");
+                System.out.print("Computer wins");
                 break;
             }
             else if (game.winner() == 2){
-                System.out.print("player 2 wins");
+                System.out.print("you win");
                 break;
             }
             boolean validMove = true;
             while(validMove){
                 System.out.println("Your turn, choose position on the board");
                 String playerMove = keyboard.nextLine();
-                if (!occupiedPositions.contains(playerMove)) {
+                if (!occupiedPositions.contains(playerMove) && Character.isDigit(playerMove.charAt(0))) {
                     game.updateBoard(board.replace(playerMove.charAt(0),'O'));
                     System.out.println(board);
                     occupiedPositions.add(playerMove);
@@ -101,14 +92,14 @@ public class TicTac {
 
             i++;
             if(game.winner() == 1){
-                System.out.print("player 1 wins");
+                System.out.print("Computer wins");
                 break;
             }
             else if (game.winner() == 2){
-                System.out.print("player 2 wins");
+                System.out.print("you win");
                 break;
             }
-            System.out.println("Computer's turn");
+            System.out.println("\nComputer's turn");
         }
         if(game.winner() == 0){
             System.out.print("Nobody won");
