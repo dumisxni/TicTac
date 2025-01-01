@@ -43,26 +43,38 @@ public class TicTacGUI extends JFrame {
         }
     }
 
+    /**
+     * Handles the player's move in the Tic Tac Toe game.
+     * @param position The position (1-9) where the player wants to place their mark.
+     */
     private void playerMove(int position) {
         String posString = String.valueOf(position);
 
-        // Player's turn
+        // Check if the selected position is not already occupied
         if (!occupiedPositions.contains(posString)) {
+            // Update the game board with the player's move ('O')
             game.updateBoard(posString.charAt(0), 'O');
+            
+            // Update the GUI button to display the player's mark
             buttons[position - 1].setText("O");
+            
+            // Add the position to the list of occupied positions
             occupiedPositions.add(posString);
 
+            // Check if the player has won
             if (game.winner() == 2) {
                 showResult("You win!");
                 return;
             }
 
-            // Computer's turn
+            // If the player hasn't won, it's the computer's turn
             computerMove();
         } else {
+            // If the position is already occupied, show an error message
             JOptionPane.showMessageDialog(this, "Position already occupied. Try again.");
         }
     }
+
 
     private void computerMove() {
         for (String move : compMoves) {
