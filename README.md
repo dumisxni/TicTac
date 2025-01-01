@@ -21,10 +21,11 @@ To run the game on your local machine, follow these steps:
  
 
 3. Compile and run the program:
-  . javac TicTac.java
-  . java TicTac
+  . javac TicTacGUI.java
+   
+  . java TicTacGUI
 
-4. Follow the on-screen instructions to play the game.
+5. Follow the on-screen instructions to play the game.
 
 Usage
 
