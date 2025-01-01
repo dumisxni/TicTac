@@ -2,11 +2,11 @@ TicTac Java Game
 
 This project implements a simple Tic-Tac-Toe game in Java, where a player competes against the computer. The game uses a textual representation of the board and allows the player to make moves by entering positions.
 
-Features
- . Player vs Computer gameplay.
- . Randomized computer moves.
- . Checks for winning conditions.
- . Text-based interface.
+**Features**
+ - Player vs Computer gameplay.
+ - Randomized computer moves.
+ - Checks for winning conditions.
+ - Text-based interface.
   
 Getting Started
 To run the game on your local machine, follow these steps:
@@ -22,7 +22,7 @@ To run the game on your local machine, follow these steps:
    
   - java TicTacGUI
 
-3. Follow the on-screen instructions to play the game.
+**3. Follow the on-screen instructions to play the game.**
 
 Usage
 
