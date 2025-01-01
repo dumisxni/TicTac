@@ -12,11 +12,11 @@ Getting Started
 To run the game on your local machine, follow these steps:
 
 1. Clone the repository:
-  .  git clone [https://github.com/your-username/your-repository.git](https://github.com/dumisxni/TicTac.git)
+  .  git clone https://github.com/dumisxni/TicTac.git
 
   .  cd ticTac
 
-  .  git pull [https://github.com/dumisxni/dumisxni](https://github.com/dumisxni/TicTac.git)
+  .  git pull https://github.com/dumisxni/TicTac.git
 
  
 
