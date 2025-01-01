@@ -11,18 +11,18 @@ Features
 Getting Started
 To run the game on your local machine, follow these steps:
 ****
-**1. Clone the repository:**:
+**1. Clone the repository:**
 - git clone https://github.com/dumisxni/TicTac.git  
 - cd TicTac 
 - git pull https://github.com/dumisxni/TicTac.git  
  
 
-3. Compile and run the program:
-  . javac TicTacGUI.java
+**2. Compile and run the program:**
+  - javac TicTacGUI.java
    
-  . java TicTacGUI
+  - java TicTacGUI
 
-5. Follow the on-screen instructions to play the game.
+3. Follow the on-screen instructions to play the game.
 
 Usage
 
